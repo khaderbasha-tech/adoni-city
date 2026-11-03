@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adoni Business Directory | ADONI CITY</title>
+<meta name="description" content="Discover local businesses and shops in Adoni.">
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+header {
+  background: #102b52;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+header h1 { margin: 0; }
+nav {
+  background: #174b83;
+  padding: 14px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 12px;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+.search {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+.categories button {
+  padding: 11px 15px;
+  border: none;
+  border-radius: 20px;
+  background: #dcecff;
+  color: #102b52;
+  cursor: pointer;
+}
+.categories button.active {
+  background: #174b83;
+  color: white;
+}
+.business-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.business-card h3 { margin-top: 0; }
+.empty {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+}
+footer {
+  background: #102b52;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ADONI CITY</h1>
+<p>Local Business Directory</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="business.html">Businesses</a>
+</nav>
+
+<div class="container">
+
+<h2>Discover Local Businesses</h2>
+<p>Find shops and services in Adoni, Andhra Pradesh.</p>
+
+<input class="search" id="search"
+placeholder="Search business or category...">
+
+<div class="categories">
+<button class="active" data-category="all">All</button>
+<button data-category="shops">Shops</button>
+<button data-category="food">Food</button>
+<button data-category="health">Health</button>
+<button data-category="services">Services</button>
+</div>
+
+<div id="business-list">
+<div class="empty">
+<h2>🏪</h2>
+<h3>Business Listings Coming Soon!</h3>
+<p>We are building Adoni's local business directory.</p>
+<p>Local businesses will appear here soon.</p>
+</div>
+</div>
+
+</div>
+
+<footer>
+<h3>ADONI CITY ❤️</h3>
+<p>Everything About Adoni</p>
+<p>© 2026 ADONI CITY</p>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll(".categories button");
+const search = document.getElementById("search");
+let category = "all";
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("active"));
+    button.classList.add("active");
+    category = button.dataset.category;
+    filterBusinesses();
+  });
+});
+
+function filterBusinesses() {
+  const cards = document.querySelectorAll(".business-card");
+  let count = 0;
+
+  cards.forEach(card => {
+    const matchesCategory =
+      category === "all" ||
+      card.dataset.category === category;
+
+    const matchesSearch =
+      card.innerText.toLowerCase()
+      .includes(search.value.toLowerCase());
+
+    card.style.display =
+      matchesCategory && matchesSearch ? "" : "none";
+
+    if (matchesCategory && matchesSearch) count++;
+  });
+
+  const empty = document.getElementById("no-results");
+  if (empty) empty.style.display = count ? "none" : "block";
+}
+
+search.addEventListener("input", filterBusinesses);
+</script>
+
+</body>
+</html>
