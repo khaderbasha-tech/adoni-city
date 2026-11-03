@@ -1,117 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ADONI CITY | Everything About Adoni</title>
-  <meta name="description" content="Discover shops, jobs, hospitals, restaurants and services in Adoni, Andhra Pradesh.">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #172033;
-    }
-    header {
-      background: #102b52;
-      color: white;
-      text-align: center;
-      padding: 28px 15px;
-    }
-    header h1 { margin: 0; font-size: 34px; }
-    header p { margin-bottom: 0; }
-    nav {
-      background: #174b83;
-      padding: 13px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 8px;
-      font-size: 14px;
-    }
-    .hero {
-      text-align: center;
-      padding: 45px 15px;
-      background: #dcecff;
-    }
-    .hero h2 { font-size: 28px; }
-    .hero p { line-height: 1.6; }
-    .container { padding: 20px; max-width: 1000px; margin: auto; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 15px;
-    }
-    .card {
-      background: white;
-      padding: 24px 10px;
-      text-align: center;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px #00000012;
-      font-weight: bold;
-    }
-    .card span { font-size: 30px; display: block; margin-bottom: 10px; }
-    footer {
-      background: #102b52;
-      color: white;
-      text-align: center;
-      padding: 22px;
-      margin-top: 30px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADONI CITY - Everything About Adoni</title>
+<meta name="description" content="Explore Adoni city. Find local shops, jobs, hospitals, education, restaurants and services.">
+
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+header {
+  background: #102b52;
+  color: white;
+  padding: 22px 15px;
+  text-align: center;
+}
+header h1 { margin: 0; font-size: 32px; }
+header p { margin-bottom: 0; }
+nav {
+  background: #174b83;
+  padding: 14px 5px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  font-size: 14px;
+}
+.hero {
+  background: linear-gradient(135deg,#dcecff,#ffffff);
+  text-align: center;
+  padding: 45px 15px;
+}
+.hero h2 { font-size: 29px; }
+.hero p { line-height: 1.6; }
+.search {
+  width: 90%;
+  max-width: 450px;
+  padding: 14px;
+  border: 1px solid #bbb;
+  border-radius: 25px;
+  font-size: 16px;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 18px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+  gap: 15px;
+}
+.card {
+  background: white;
+  padding: 23px 10px;
+  border-radius: 13px;
+  text-align: center;
+  box-shadow: 0 3px 10px #00000010;
+}
+.card span { font-size: 32px; }
+.card h3 { font-size: 16px; }
+.info {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+footer {
+  background: #102b52;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
   <h1>ADONI CITY</h1>
-  <p>Everything About Adoni</p>
+  <p>Everything About Adoni ❤️</p>
 </header>
 
 <nav>
   <a href="#home">Home</a>
-  <a href="#services">Services</a>
+  <a href="#explore">Explore</a>
+  <a href="#business">Business</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero" id="home">
   <h2>Welcome to ADONI CITY</h2>
-  <p>Your digital guide to Adoni, Andhra Pradesh.</p>
-  <p>Find local shops, jobs, hospitals, food and more.</p>
+  <p>Your own digital guide to Adoni, Andhra Pradesh.</p>
+  <input class="search" id="search"
+  type="search" placeholder="Search services in Adoni...">
+  <p>Discover. Connect. Explore.</p>
 </section>
 
-<section class="container" id="services">
+<section class="container" id="explore">
   <h2>Explore Adoni</h2>
-  <div class="grid">
-    <div class="card"><span>🏪</span>Local Shops</div>
-    <div class="card"><span>💼</span>Jobs</div>
-    <div class="card"><span>🏥</span>Hospitals</div>
-    <div class="card"><span>🍽️</span>Restaurants</div>
-    <div class="card"><span>🎓</span>Education</div>
-    <div class="card"><span>🚕</span>Travel</div>
-    <div class="card"><span>📰</span>Local News</div>
-    <div class="card"><span>📍</span>Local Places</div>
+  <div class="grid" id="services">
+
+    <div class="card"><span>🏪</span><h3>Local Shops</h3></div>
+    <div class="card"><span>💼</span><h3>Jobs</h3></div>
+    <div class="card"><span>🏥</span><h3>Hospitals</h3></div>
+    <div class="card"><span>🍽️</span><h3>Restaurants</h3></div>
+    <div class="card"><span>🎓</span><h3>Education</h3></div>
+    <div class="card"><span>🚕</span><h3>Travel</h3></div>
+    <div class="card"><span>📰</span><h3>Local News</h3></div>
+    <div class="card"><span>📍</span><h3>Places</h3></div>
+    <div class="card"><span>🏨</span><h3>Hotels</h3></div>
+    <div class="card"><span>🔧</span><h3>Services</h3></div>
+
+  </div>
+  <p id="empty" style="display:none;">No matching category found.</p>
+</section>
+
+<section class="container" id="business">
+  <div class="info">
+    <h2>Grow Your Business in Adoni</h2>
+    <p>Are you a shop owner or business owner?</p>
+    <p>Get your business listed on ADONI CITY.</p>
+    <p>Business listings coming soon!</p>
   </div>
 </section>
 
 <section class="container" id="about">
-  <h2>About ADONI CITY</h2>
-  <p>ADONI CITY is a digital platform designed to connect Adoni residents with local businesses, services and useful information.</p>
+  <div class="info">
+    <h2>About ADONI CITY</h2>
+    <p>ADONI CITY is a digital platform created to connect Adoni residents with local businesses, jobs, education, healthcare and useful city information.</p>
+  </div>
 </section>
 
 <section class="container" id="contact">
-  <h2>Contact Us</h2>
-  <p>Want to list your business on ADONI CITY?</p>
-  <p>Contact us for business listing and promotions.</p>
+  <div class="info">
+    <h2>Contact ADONI CITY</h2>
+    <p>For business listings and suggestions, contact our team.</p>
+    <p>More features coming soon!</p>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 ADONI CITY</p>
-  <p>Made for the people of Adoni ❤️</p>
+  <h3>ADONI CITY</h3>
+  <p>Everything About Adoni ❤️</p>
+  <p>© 2026 ADONI CITY. All Rights Reserved.</p>
 </footer>
+
+<script>
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+const empty = document.getElementById("empty");
+
+search.addEventListener("input", function() {
+  let found = 0;
+  cards.forEach(card => {
+    const match = card.innerText.toLowerCase()
+      .includes(search.value.toLowerCase());
+    card.style.display = match ? "" : "none";
+    if (match) found++;
+  });
+  empty.style.display = found ? "none" : "block";
+});
+</script>
 
 </body>
 </html>
