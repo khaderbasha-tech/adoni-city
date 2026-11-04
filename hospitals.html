@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adoni Hospitals | ADONI CITY</title>
+<meta name="description" content="Find hospitals, clinics and healthcare services in Adoni.">
+
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+header {
+  background: #102b52;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+nav {
+  background: #174b83;
+  padding: 14px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+.search {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.card {
+  background: white;
+  padding: 20px 10px;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.card.active {
+  border-color: #174b83;
+  background: #e5efff;
+}
+.card span { font-size: 30px; }
+.card h3 { font-size: 15px; }
+.info {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+}
+footer {
+  background: #102b52;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>ADONI CITY</h1>
+<p>Hospitals & Healthcare Directory</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="business.html">Businesses</a>
+<a href="jobs.html">Jobs</a>
+<a href="hospitals.html">Healthcare</a>
+</nav>
+
+<main class="container">
+<h2>Healthcare in Adoni 🏥</h2>
+<p>Find healthcare services in your city.</p>
+
+<input type="search" class="search"
+id="search" placeholder="Search healthcare category...">
+
+<div class="grid" id="categories">
+<div class="card" data-name="hospitals">
+<span>🏥</span><h3>Hospitals</h3>
+</div>
+<div class="card" data-name="clinics">
+<span>🩺</span><h3>Clinics</h3>
+</div>
+<div class="card" data-name="dental clinics">
+<span>🦷</span><h3>Dental Clinics</h3>
+</div>
+<div class="card" data-name="medical stores">
+<span>💊</span><h3>Medical Stores</h3>
+</div>
+<div class="card" data-name="laboratories">
+<span>🔬</span><h3>Laboratories</h3>
+</div>
+<div class="card" data-name="ambulance">
+<span>🚑</span><h3>Ambulance</h3>
+</div>
+</div>
+
+<div class="info" id="result">
+<h2>Coming Soon!</h2>
+<p>Healthcare listings for Adoni will be added here.</p>
+<p>Verified contact details and addresses will be provided.</p>
+</div>
+</main>
+
+<footer>
+<h3>ADONI CITY ❤️</h3>
+<p>Everything About Adoni</p>
+<p>© 2026 ADONI CITY</p>
+</footer>
+
+<script>
+const cards = document.querySelectorAll(".card");
+const search = document.getElementById("search");
+
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    cards.forEach(c => c.classList.remove("active"));
+    card.classList.add("active");
+    search.value = card.dataset.name;
+  });
+});
+
+search.addEventListener("input", () => {
+  const value = search.value.toLowerCase();
+  cards.forEach(card => {
+    card.style.display =
+      card.dataset.name.includes(value) ? "" : "none";
+  });
+});
+</script>
+
+</body>
+</html>
