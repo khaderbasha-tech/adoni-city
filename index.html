@@ -189,29 +189,6 @@ search.addEventListener("input", function() {
   });
   empty.style.display = found ? "none" : "block";
 });
-
-  const SUPABASE_URL = "https://nazmgdsoecymnpjrfyiz.supabase.co"
-  const SUPABASE_KEY = "sb_publishable_PAQMO0aqYX1d-OWcfpZl7w_5il56i4H"
-  async function loadBusinesses(){
-  try{
-    let res = await fetch(SUPABASE_URL + "/rest/v1/businesses?select=*&order=created_at.desc", {
-      headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY }
-    });
-    let data = await res.json();
-    console.log(data);
-    // agar tere paas pehle se cards wala div hai, uska id yahan daal
-    let container = document.getElementById("business-list") || document.querySelector("main") || document.body;
-    if(data && data.length > 0){
-      data.forEach(b => {
-        let div = document.createElement("div");
-        div.className = "card";
-        div.innerHTML = `<h3>${b.name || ''}</h3><p>${b.category || ''} - ${b.phone || ''}</p><p>${b.address || ''}</p><p>${b.description || ''}</p>`;
-        container.appendChild(div);
-      });
-    }
-  }catch(e){ console.log("Error", e); }
-}
-loadBusinesses();
 </script>
 
 </body>
