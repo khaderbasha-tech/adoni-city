@@ -111,14 +111,6 @@ placeholder="Search business or category...">
 </div>
 
 <div id="business-list">
-<div class="empty">
-<h2>🏪</h2>
-<h3>Business Listings Coming Soon!</h3>
-<p>We are building Adoni's local business directory.</p>
-<p>Local businesses will appear here soon.</p>
-</div>
-</div>
-
 </div>
 
 <footer>
@@ -178,7 +170,8 @@ fetch(SUPABASE_URL + "/rest/v1/businesses?select=*&order=created_at.desc", {
     let div = document.createElement("div");
     div.className = "business-card";
     div.setAttribute("data-category", b.category || "shops");
-    div.innerHTML = "<h3>" + (b.name || "") + "</h3><p>" + (b.category || "") + " - " + (b.phone || "") + "</p><p>" + (b.address || "") + "</p><p>" + (b.description || "") + "</p>";
+   let photo = b.image_url ? "<img src='" + b.image_url + "' style='width:100%; height:180px; object-fit:cover; border-radius:12px 12px 0 0; display:block;'>" : "";
+div.innerHTML = photo + "<h3>" + (b.name || "") + "</h3><p>" + (b.category || "") + " - " + (b.phone || "") + "</p><p>" + (b.address || "") + "</p><p>" + (b.description || "") + "</p>";
     list.appendChild(div);
   });
 });
