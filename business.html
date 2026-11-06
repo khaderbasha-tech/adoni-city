@@ -170,7 +170,7 @@ fetch(SUPABASE_URL + "/rest/v1/businesses?select=*&order=created_at.desc", {
     let div = document.createElement("div");
     div.className = "business-card";
     div.setAttribute("data-category", b.category || "shops");
-   let photo = b.image_url ? "<img src='" + b.image_url + "' style='width:100%; height:auto; object-fit:cover; border-radius:12px 12px 0 0; display:block;'>" : "";
+   let photo = b.image_url ? "<img src='" + b.image_url + "' style='width:100%; height:auto; display:block; border-radius:12px 12px 0 0;'>" : "";
 div.innerHTML = photo + "<h3>" + (b.name || "") + "</h3><p>" + (b.category || "") + " - " + (b.phone || "") + "</p><p>" + (b.address || "") + "</p><p>" + (b.description || "") + "</p>";
     list.appendChild(div);
   });
